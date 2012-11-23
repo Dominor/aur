@@ -3,8 +3,8 @@
 # text : The new mediaplayer from ROSA(based on SMPlayer)
 
 pkgname=rosa-media-player
-pkgver=1.5
-pkgrel=11
+pkgver=1.5.1
+pkgrel=1
 pkgdesc="The new multimedia player(based on SMPlayer) with clean and elegant UI."
 arch=(i686 x86_64)
 url=http://www.koryavov.net/2012/09/rosa-media-player-15.html
@@ -13,7 +13,7 @@ url=http://www.koryavov.net/2012/09/rosa-media-player-15.html
 # or rosalinux mirror
 # http://mirror.yandex.ru/rosa/rosa2012.1/repository/SRPMS/main/release/
 
-_mandriva_rel=15
+_mandriva_rel=1
 
 source=(https://github.com/Dominor/aur/raw/master/$pkgname/$pkgname-$pkgver.tar.gz)
 license=(GPL)
@@ -23,8 +23,8 @@ optdepends=('mencoder: video splitting support'
             'rosa-media-player-plugin: mozilla plugin')
 makedepends=('qt>=4.2.0' 'wildmidi')
 install="$pkgname".install
-md5sums=('94580c6a15bf6d19361e69e01732e7d2')
-sha256sums=('c7ebb4c1a2004d8eb32f1c45791fbe36ee851740d5591af24b6fde7a7ae2a126')
+md5sums=('4e88101e0313b8536f0534421fedcd5f')
+sha256sums=('8f4a91cef788cb7a1114b8c808ea6eda0b6776d2754aa80e52d1c783a16cb80b')
 
 build()
 {
