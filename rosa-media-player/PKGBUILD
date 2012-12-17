@@ -1,0 +1,42 @@
+# Maintainer: Vítor Ferreira <vitor.dominor at gmail dot com>
+# Contributor: Andrei Gutu
+# text : The new mediaplayer from ROSA(based on SMPlayer)
+
+pkgname=rosa-media-player
+pkgver=1.5.1
+pkgrel=2
+pkgdesc="The new multimedia player(based on SMPlayer) with clean and elegant UI."
+arch=(i686 x86_64)
+url=http://www.koryavov.net/2012/09/rosa-media-player-15.html
+# Alternative url is that of official git repo for the rosa media player project:
+# https://abf.rosalinux.ru/uxteam/ROSA_Media_Player
+# or rosalinux mirror
+# http://mirror.yandex.ru/rosa/rosa2012.1/repository/SRPMS/main/release/
+
+_mandriva_rel=6
+
+source=(https://github.com/Dominor/aur/raw/master/$pkgname/$pkgname-$pkgver.tar.gz)
+license=(GPL)
+depends=('qt>=4.2.0' 'mplayer' 'wildmidi' 'timidity-freepats')
+optdepends=('mencoder: video splitting support'
+            'ffmpeg: audio cutting and video recording support'
+            'rosa-media-player-plugin: mozilla plugin')
+makedepends=('qt>=4.2.0' 'wildmidi')
+install="$pkgname".install
+md5sums=('f0a33a72233853556fbfeeb3a8079266')
+sha256sums=('646e23e9ea0d2d5d1165513f9397a832e4c38accb6ff00afd5bfb9d95d9b0514')
+
+build()
+{
+  cd "$srcdir/$pkgname"
+  ./get_romp_version.sh $pkgver $_mandriva_rel
+  make PREFIX=/usr
+}
+
+package()
+{
+  cd "$srcdir/$pkgname"
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:
