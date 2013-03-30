@@ -15,10 +15,9 @@ url=http://www.koryavov.net/2012/09/rosa-media-player-15.html
 
 _upstream_rel=1
 
-# source=(https://github.com/Dominor/aur/raw/master/$pkgname/$pkgname-$pkgver.tar.gz)
+source=(https://github.com/Dominor/aur/raw/master/$pkgname/$pkgname-$pkgver.tar.gz)
 # end source URL with sha1sum taken from https://abf.rosalinux.ru/import/rosa-media-player/raw/rosa2012.1/.abf.yml
 #source=(http://file-store.rosalinux.ru/download/22d80592f0e8b6813add28306caa2d8573d06664)
-source=($pkgname-$pkgver.tar.gz)
 license=(GPL)
 depends=('qt4' 'mplayer' 'wildmidi' 'timidity-freepats' 'wget' 'qjson')
 optdepends=('mencoder: video splitting support'
